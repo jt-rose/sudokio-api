@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sudokio API</title>
+    </head>
+    <body>
+        <h1>Sudokio API</h1>
+        <p>Welcome to the Sudokio API!</p>
+        <p>To get the full info on a puzzle, just enter the puzzle after "api/" 
+            with an 81 character string. The character 0 can be used to 
+            represent unsolved cells, and all numbers should be listed from the 
+            topleft of the puzzle to the bottomright (moving right to left 
+            across the row before moving on to the next row)</p>
+        <br>
+        <p>To get more specific info, you can submit the puzzle after
+             the following url's:</p>
+        <ul>
+            <li>"/solve-next/" - provide next step in puzzle</li>
+            <li>"/solve-all/" - show all steps until puzzle is completed</li>
+            <li>"/strategy-next/" - show next strategy suggested</li>
+            <li>"/strategy-all/" - show all required strategies found by the solver</li>
+        </ul>
+        <br>
+        <p>You can also access some sample puzzles provided at the following links:</p>
+        <ul>
+            <li><a href="/api/sample/basic-puzzle">Basic Puzzle</a></li>
+            <li><a href="/api/sample/hidden-triple">Hidden Triple</a></li>
+            <li><a href="/api/sample/hidden-quad">Hidden Quad</a></li>
+            <li><a href="/api/sample/x-wing">X-wing</a></li>
+            <li><a href="/api/sample/swordfish">Swordfish</a></li>
+            <li><a href="/api/sample/Jellyfish">Jellyfish</a></li>
+            <li><a href="/api/sample/x-chain">X-chain</a></li>
+        </ul>
+    </body>
+</html>

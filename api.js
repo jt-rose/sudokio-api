@@ -1,5 +1,6 @@
 import express from "express"
 import morgan from "morgan"
+import path from "path"
 
 import { checkAndSolveNext } from "./solvers/checkAndSolve"
 import checkAndSolve from "./solvers/checkAndSolve"
@@ -9,9 +10,10 @@ const app = express()
 
 app.use(morgan("dev")) // log incoming reqs
 
+
 // Provide API instructions
 app.get("/api", (req, res) => {
-    res.end("insert API instructions here")
+    res.sendFile(__dirname + "/public" + "/api.html")
 })
 
 const sudokuGrid = "sudokuGrid"
