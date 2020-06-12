@@ -1,10 +1,8 @@
 import express from "express"
 import morgan from "morgan"
 
-import {
-    checkAndSolve,
-    checkAndSolveNext
-} from "./solvers/checkAndSolve"
+import { checkAndSolveNext } from "./solvers/checkAndSolve"
+import checkAndSolve from "./solvers/checkAndSolve"
 
 const app = express()
 
