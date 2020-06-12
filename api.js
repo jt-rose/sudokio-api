@@ -3,6 +3,7 @@ import morgan from "morgan"
 
 import { checkAndSolveNext } from "./solvers/checkAndSolve"
 import checkAndSolve from "./solvers/checkAndSolve"
+import sampleRoute from "./routes/sample"
 
 const app = express()
 
@@ -47,24 +48,8 @@ app.get(`/api/strategy-all/:${sudokuGrid}`, (req, res) => {
     }
 })
 
-const samplePuzzleList = [
-    {
-        name: "testing",
-        gridString: "testing"
-    }
-]
-
-app.get("/api/sample/:sampleName", (req, res) => {
-    const sample = samplePuzzleList.find(x => x.name === req.params.sampleName)
-    if (sample) {
-        const solution = checkAndSolve(sample.gridString)
-        res.json(solution)
-    } else {
-        res.json({
-            error: "no such sample found"
-        })
-    }
-})
+// run sudoku solvers on sample puzzles
+app.use("/api/sample", sampleRoute)
 
 // provide full data on puzzle, same as 'solve-all' route
 app.get(`/api/:${sudokuGrid}`, (req, res) => {
