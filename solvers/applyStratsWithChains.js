@@ -13,7 +13,7 @@ const strategyListWithChains = {
     solveXChainFullGrid
 };
 
-const applyStratsWithChains = applyStrats(strategyListWithChains);
+export const applyStratsWithChains = applyStrats(strategyListWithChains);
 
 // attempts to fully solve grid, using variety of human strategies
 // while searching for the easiest and most effective solutions

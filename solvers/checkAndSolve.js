@@ -1,12 +1,13 @@
 import { checkValid } from "./checkValid";
+import { applyStratsWithChains } from "./applyStratsWithChains"
 import solveWithStandardOptions from "./applyStratsWithChains";
 
-const checkAndSolve = gridString => {
+const checkAndSolveTemplate = (solverFunction) => gridString => {
     const confirmValid = checkValid(gridString);
     if (!confirmValid.valid) {
         return confirmValid;
     } else {
-        const attempt = solveWithStandardOptions(confirmValid.formattedGrid);
+        const attempt = solverFunction(confirmValid.formattedGrid);
         const strategiesUsed = [...new Set(attempt.solutions.map(x => x.strategy))];
         return {
             gridString: confirmValid.gridString,
@@ -19,5 +20,8 @@ const checkAndSolve = gridString => {
         };
     }
 }
+
+const checkAndSolve = checkAndSolveTemplate(solveWithStandardOptions);
+export const checkAndSolveNext = checkAndSolveTemplate(applyStratsWithChains);
 
 export default checkAndSolve;
