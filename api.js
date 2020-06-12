@@ -1,20 +1,13 @@
 import express from "express"
 import morgan from "morgan"
 
-import checkAndSolve from "./solvers/checkAndSolve"
-import { checkAndSolveNext } from "./solvers/checkAndSolve"
+import {
+    checkAndSolve,
+    checkAndSolveNext
+} from "./solvers/checkAndSolve"
 
 const app = express()
-/*
-const checkValidMiddleware = (req, res, next) => {
-    const currentCheck = checkValid(req.params.sudokuGrid)
-    if (!currentCheck.valid) {
-        res.json(currentCheck)
-    } else {
-        next()
-    }
-}
-*/
+
 app.use(morgan("dev")) // log incoming reqs
 
 // Provide API instructions
