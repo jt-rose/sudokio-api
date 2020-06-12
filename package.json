@@ -1,0 +1,17 @@
+{
+  "name": "sudokio-api",
+  "version": "1.0.0",
+  "description": "Simple API for Sudokio solver",
+  "main": "api.js",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "ramda": "^0.27.0"
+  },
+  "scripts": {
+    "start": "nodemon -r esm api.js"
+  }
+}
